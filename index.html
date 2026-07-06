@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Everest Ifeanyi Eze — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['"Playfair Display"', 'serif'],
+          sans: ['Inter', 'sans-serif'],
+        },
+        colors: {
+          gold: '#F0C060',
+          gold2: '#FFD97D',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #1e1b4b; }
+  ::-webkit-scrollbar-thumb { background: #F0C060; border-radius: 3px; }
+</style>
+</head>
+<!--Using claude as the LLM to prompt and the prompt is below -->
+
+<!--
+hi claude i want  you to build  personal portfolio website for me  and it should be ATS friendly for my school assignment.
+
+in my personal portfolio website you should use HTML and CSS only  separate it.
+
+my name Everest Ifeanyi Eze  a  Bsc in Business Administration in Enugu State University of Science and Technology.
+
+Presently a student of Turing Tech where i am studying Full-stack Web-development
+
+
+C-->
+<body class="font-sans bg-indigo-950 text-slate-100 min-h-screen flex flex-col">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-indigo-950/95 backdrop-blur-md border-b border-gold/20">
+    <input type="checkbox" id="nav-toggle" class="peer hidden" />
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-5 py-4">
+      <a href="#home" class="font-display text-2xl font-black text-gold2">
+        E<span class="text-white">I</span>
+      </a>
+      <ul class="hidden md:flex gap-8 items-center">
+        <li><a href="#home" class="text-sm font-medium text-slate-300 uppercase tracking-wide hover:text-gold2 transition">Home</a></li>
+        <li><a href="#about" class="text-sm font-medium text-slate-300 uppercase tracking-wide hover:text-gold2 transition">About</a></li>
+        <li><a href="#skills" class="text-sm font-medium text-slate-300 uppercase tracking-wide hover:text-gold2 transition">Skills</a></li>
+        <li><a href="#projects" class="text-sm font-medium text-slate-300 uppercase tracking-wide hover:text-gold2 transition">Projects</a></li>
+        <li><a href="#contact" class="text-sm font-medium text-slate-300 uppercase tracking-wide hover:text-gold2 transition">Contact</a></li>
+      </ul>
+      <label for="nav-toggle" class="md:hidden flex flex-col gap-1.5 cursor-pointer p-1" aria-label="Toggle menu">
+        <span class="w-6 h-0.5 bg-gold rounded"></span>
+        <span class="w-6 h-0.5 bg-gold rounded"></span>
+        <span class="w-6 h-0.5 bg-gold rounded"></span>
+      </label>
+    </div>
+    <ul class="hidden peer-checked:flex md:hidden flex-col gap-4 px-5 pb-5 bg-indigo-950/98 border-b border-gold/10">
+      <li><a href="#home" class="block text-sm font-medium text-slate-300 uppercase tracking-wide">Home</a></li>
+      <li><a href="#about" class="block text-sm font-medium text-slate-300 uppercase tracking-wide">About</a></li>
+      <li><a href="#skills" class="block text-sm font-medium text-slate-300 uppercase tracking-wide">Skills</a></li>
+      <li><a href="#projects" class="block text-sm font-medium text-slate-300 uppercase tracking-wide">Projects</a></li>
+      <li><a href="#contact" class="block text-sm font-medium text-slate-300 uppercase tracking-wide">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="relative overflow-hidden bg-gradient-to-br from-indigo-700 via-purple-700 to-pink-600 py-20 px-5">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center gap-16 relative z-10 text-center md:text-left justify-center md:justify-start">
+      <div class="flex-shrink-0 relative">
+        <div class=" border-gold bg-indigo-900/60 flex items-center justify-center shadow-[0_0_40px_rgba(240,192,96,0.4)]">
+          <img src="./my  picture.jpeg" alt="#" class="w-4/10 h-4/10 object-cover hover:scale-105 transition-transform duration-500 rounded-full">
+            
+        </div>
+        <div class="absolute -inset-2 rounded-full border-2 border-dashed border-gold/40 animate-spin [animation-duration:20s]"></div>
+      </div>
+      <div class="flex-1 min-w-[260px]">
+        <p class="text-xs uppercase tracking-[3px] text-gold2 mb-3">Welcome to my portfolio</p>
+        <h1 class="font-display text-4xl md:text-6xl font-black text-white leading-tight mb-2">
+          Everest Ifeanyi <span class="text-gold2">Eze</span>
+        </h1>
+        <p class="text-lg text-gold font-medium mb-4">Full-Stack Developer &amp; UI/UX Designer</p>
+        <p class="text-slate-100/90 leading-relaxed max-w-lg mb-8">
+          A passionate, results-driven developer currently training in full-stack web development and artificial intelligence. My goal is to bridge the gap between beautiful design and robust engineering to build products that make an impact.
+        </p>
+        <div class="flex gap-4 flex-wrap justify-center md:justify-start">
+          <a href="#projects" class="inline-block px-7 py-3 bg-gold text-indigo-950 font-bold text-sm rounded-md hover:bg-gold2 hover:-translate-y-0.5 transition shadow-lg">View My Work</a>
+          <a href="#resume" class="inline-block px-7 py-3 border-2 border-gold text-gold font-semibold text-sm rounded-md hover:bg-gold hover:text-indigo-950 hover:-translate-y-0.5 transition">View Resume</a>
+          <a href="#contact" class="inline-block px-7 py-3 border-2 border-gold text-gold font-semibold text-sm rounded-md hover:bg-gold hover:text-indigo-950 hover:-translate-y-0.5 transition">Contact Me</a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute top-[-15%] right-[-8%] w-[500px] h-[500px] rounded-full bg-pink-400/20 blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-[-15%] left-[-5%] w-[400px] h-[400px] rounded-full bg-yellow-300/10 blur-3xl pointer-events-none"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20 px-5 bg-gradient-to-br from-violet-900 via-indigo-900 to-purple-900">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-xs uppercase tracking-[3px] text-gold mb-2">Who I Am</p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-3">About Me</h2>
+      <div class="w-12 h-1 bg-gold rounded mb-10"></div>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-white/5 border border-gold/15 rounded-xl p-7 hover:border-gold/50 hover:-translate-y-1 transition shadow-lg">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-user-astronaut"></i></div>
+          <h3 class="font-display text-lg font-bold text-white mb-2">My Story</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">I'm learning full-stack web development and artificial intelligence, based in Enugu, Nigeria. I love creating digital experiences that are both visually stunning and technically sound.</p>
+        </div>
+        <div class="bg-white/5 border border-gold/15 rounded-xl p-7 hover:border-gold/50 hover:-translate-y-1 transition shadow-lg">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-graduation-cap"></i></div>
+          <h3 class="font-display text-lg font-bold text-white mb-2">Education</h3>
+          <p class="text-sm text-gold font-medium mb-2">B.Sc. Business Administration</p>
+          <p class="text-sm text-slate-300 leading-relaxed">Enugu State University of Science and Technology, 2012–2016, Second Class Honours. Starting a journey in tech — especially full-stack development and AI — comes with a lot of challenges in a new field, but I'll overcome them.</p>
+        </div>
+        <div class="bg-white/5 border border-gold/15 rounded-xl p-7 hover:border-gold/50 hover:-translate-y-1 transition shadow-lg">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-briefcase"></i></div>
+          <h3 class="font-display text-lg font-bold text-white mb-2">Experience</h3>
+          <p class="text-sm text-gold font-medium">Currently learning at Turing Tech Academy</p>
+        </div>
+        <div class="bg-white/5 border border-gold/15 rounded-xl p-7 hover:border-gold/50 hover:-translate-y-1 transition shadow-lg">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-heart"></i></div>
+          <h3 class="font-display text-lg font-bold text-white mb-2">Interests</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">When I'm not coding, you'll find me exploring open-source projects, tinkering with hardware, writing tech articles, or enjoying coffee with a good design book.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-20 px-5 bg-gradient-to-br from-cyan-800 via-teal-800 to-emerald-800">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-xs uppercase tracking-[3px] text-gold mb-2">What I Know</p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-3">Skills &amp; Expertise</h2>
+      <div class="w-12 h-1 bg-gold rounded mb-10"></div>
+      <div class="grid sm:grid-cols-2 gap-6">
+
+        <div class="bg-white/5 border border-gold/15 rounded-xl p-7 hover:border-gold/50 transition shadow-lg">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-code"></i></div>
+          <h3 class="font-display text-lg font-bold text-white mb-4">Frontend Development</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1"><span>HTML / CSS</span><span>95%</span></div>
+              <div class="h-1.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-gold to-gold2 rounded-full" style="width:95%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1"><span>JavaScript / TypeScript</span><span>60%</span></div>
+              <div class="h-1.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-gold to-gold2 rounded-full" style="width:60%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1"><span>React / Next.js</span><span>40%</span></div>
+              <div class="h-1.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-gold to-gold2 rounded-full" style="width:40%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/5 border border-gold/15 rounded-xl p-7 hover:border-gold/50 transition shadow-lg">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-server"></i></div>
+          <h3 class="font-display text-lg font-bold text-white mb-4">Backend Development</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1"><span>Node.js / Express</span><span>55%</span></div>
+              <div class="h-1.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-gold to-gold2 rounded-full" style="width:55%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1"><span>Python / Django</span><span>50%</span></div>
+              <div class="h-1.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-gold to-gold2 rounded-full" style="width:50%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1"><span>PostgreSQL / MongoDB</span><span>40%</span></div>
+              <div class="h-1.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-gold to-gold2 rounded-full" style="width:40%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/5 border border-gold/15 rounded-xl p-7 hover:border-gold/50 transition shadow-lg">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-paint-brush"></i></div>
+          <h3 class="font-display text-lg font-bold text-white mb-4">Design &amp; Tools</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1"><span>Figma / Adobe XD</span><span>45%</span></div>
+              <div class="h-1.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-gold to-gold2 rounded-full" style="width:45%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1"><span>UI/UX Design</span><span>65%</span></div>
+              <div class="h-1.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-gold to-gold2 rounded-full" style="width:65%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1"><span>Tailwind / SCSS</span><span>80%</span></div>
+              <div class="h-1.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-gold to-gold2 rounded-full" style="width:80%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/5 border border-gold/15 rounded-xl p-7 hover:border-gold/50 transition shadow-lg">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-cloud"></i></div>
+          <h3 class="font-display text-lg font-bold text-white mb-4">DevOps &amp; Cloud</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1"><span>Docker / Kubernetes</span><span>30%</span></div>
+              <div class="h-1.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-gold to-gold2 rounded-full" style="width:30%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1"><span>AWS / GCP</span><span>25%</span></div>
+              <div class="h-1.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-gold to-gold2 rounded-full" style="width:25%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1"><span>CI/CD Pipelines</span><span>20%</span></div>
+              <div class="h-1.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-gold to-gold2 rounded-full" style="width:20%"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-20 px-5 bg-blue">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-xs uppercase tracking-[3px] text-gold mb-2">What I've Built</p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-3">Featured Projects</h2>
+      <div class="w-12 h-1 bg-gold rounded mb-10"></div>
+      <div class="grid sm:grid-cols-2 gap-6">
+
+        <div class="bg-white/5 border border-gold/15 rounded-xl p-7 hover:border-gold/50 hover:-translate-y-1 transition shadow-lg">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-utensils"></i></div>
+          <h3 class="font-display text-lg font-bold text-white mb-2">MaMaPutOnline</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">A Nigerian food delivery website built with Tailwind CSS, featuring product cards, cart display, and a warm, appetizing design — fully CSS-only, no JavaScript.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="text-xs bg-gold/10 text-gold border border-gold/30 rounded px-2 py-1 uppercase tracking-wide">Tailwind CSS</span>
+            <span class="text-xs bg-gold/10 text-gold border border-gold/30 rounded px-2 py-1 uppercase tracking-wide">HTML5</span>
+          </div>
+          <div class="mt-4 flex gap-4">
+            <a href="#" class="text-sm text-gold hover:text-gold2 flex items-center gap-1 transition"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="text-sm text-gold hover:text-gold2 flex items-center gap-1 transition"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+
+        <div class="bg-white/5 border border-gold/15 rounded-xl p-7 hover:border-gold/50 hover:-translate-y-1 transition shadow-lg">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-plane"></i></div>
+          <h3 class="font-display text-lg font-bold text-white mb-2">Ever Safety Fly</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">A five-page luxury travel agency site — Home, Flights, Hotels, Destinations, and Contact — with a navy/gold/red theme and a pure CSS hamburger menu.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="text-xs bg-gold/10 text-gold border border-gold/30 rounded px-2 py-1 uppercase tracking-wide">Tailwind CSS</span>
+            <span class="text-xs bg-gold/10 text-gold border border-gold/30 rounded px-2 py-1 uppercase tracking-wide">Responsive</span>
+          </div>
+          <div class="mt-4 flex gap-4">
+            <a href="#" class="text-sm text-gold hover:text-gold2 flex items-center gap-1 transition"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="text-sm text-gold hover:text-gold2 flex items-center gap-1 transition"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+
+        <div class="bg-white/5 border border-gold/15 rounded-xl p-7 hover:border-gold/50 hover:-translate-y-1 transition shadow-lg">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-building-columns"></i></div>
+          <h3 class="font-display text-lg font-bold text-white mb-2">Progress Saving MFB</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">A micro-finance bank website header with a sticky layout, deep green/gold palette, desktop dropdowns, and a mobile accordion overlay menu with a custom SVG shield logo.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="text-xs bg-gold/10 text-gold border border-gold/30 rounded px-2 py-1 uppercase tracking-wide">HTML/CSS</span>
+            <span class="text-xs bg-gold/10 text-gold border border-gold/30 rounded px-2 py-1 uppercase tracking-wide">SVG</span>
+          </div>
+          <div class="mt-4 flex gap-4">
+            <a href="#" class="text-sm text-gold hover:text-gold2 flex items-center gap-1 transition"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="text-sm text-gold hover:text-gold2 flex items-center gap-1 transition"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+
+        <div class="bg-white/5 border border-gold/15 rounded-xl p-7 hover:border-gold/50 hover:-translate-y-1 transition shadow-lg">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-book"></i></div>
+          <h3 class="font-display text-lg font-bold text-white mb-2">Nine Days for the Thief</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">A children's picture book rooted in an Igbo proverb, set in the fictional village of Umuoyibo — with custom SVG illustrations, published for Amazon KDP.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="text-xs bg-gold/10 text-gold border border-gold/30 rounded px-2 py-1 uppercase tracking-wide">Illustration</span>
+            <span class="text-xs bg-gold/10 text-gold border border-gold/30 rounded px-2 py-1 uppercase tracking-wide">Publishing</span>
+          </div>
+          <div class="mt-4 flex gap-4">
+            <a href="#" class="text-sm text-gold hover:text-gold2 flex items-center gap-1 transition"><i class="fab fa-amazon"></i> Amazon KDP</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 px-5 bg-gradient-to-br from-fuchsia-800 via-purple-800 to-indigo-800">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-xs uppercase tracking-[3px] text-gold mb-2">Get In Touch</p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-3">Contact Me</h2>
+      <div class="w-12 h-1 bg-gold rounded mb-10"></div>
+      <div class="grid sm:grid-cols-2 gap-6">
+
+        <div class="bg-white/5 border border-gold/15 rounded-xl p-7 shadow-lg">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-envelope"></i></div>
+          <h3 class="font-display text-lg font-bold text-white mb-2">Email Me</h3>
+          <p class="text-sm text-slate-300 mb-4">Prefer email? Drop me a line anytime — I typically respond within 24 hours.</p>
+          <a href="mailto:ifyeverest12@gmail.com" class="inline-block px-6 py-2.5 bg-gold text-indigo-950 font-bold text-sm rounded-md hover:bg-gold2 transition">ifyeverest12@gmail.com</a>
+        </div>
+
+        <div class="bg-white/5 border border-gold/15 rounded-xl p-7 shadow-lg">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-phone-alt"></i></div>
+          <h3 class="font-display text-lg font-bold text-white mb-2">Call or WhatsApp</h3>
+          <p class="text-sm text-slate-300 mb-4">Available for calls Monday–Friday, 9AM–6PM WAT. WhatsApp messages welcome anytime.</p>
+          <a href="tel:+2347062278167" class="inline-block px-6 py-2.5 border-2 border-gold text-gold font-semibold text-sm rounded-md hover:bg-gold hover:text-indigo-950 transition">+234 706 227 8167</a>
+        </div>
+
+        <div class="sm:col-span-2 bg-white/5 border border-gold/15 rounded-xl p-7 shadow-lg">
+          <h3 class="font-display text-lg font-bold text-white mb-4">Send a Message</h3>
+          <div class="flex flex-col gap-4">
+            <input type="text" placeholder="Your Full Name" class="w-full bg-indigo-950/60 border border-gold/25 rounded-md px-4 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20" />
+            <input type="email" placeholder="Your Email Address" class="w-full bg-indigo-950/60 border border-gold/25 rounded-md px-4 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20" />
+            <input type="text" placeholder="Subject" class="w-full bg-indigo-950/60 border border-gold/25 rounded-md px-4 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20" />
+            <textarea placeholder="Your message…" rows="5" class="w-full bg-indigo-950/60 border border-gold/25 rounded-md px-4 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 resize-y"></textarea>
+            <button type="button" class="self-start flex items-center gap-2 px-7 py-3 bg-gold text-indigo-950 font-bold text-sm rounded-md hover:bg-gold2 transition">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume" class="py-20 px-5 bg-gradient-to-br from-blue-900 via-indigo-900 to-violet-900">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-xs uppercase tracking-[3px] text-gold mb-2">My Resume</p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-3">Curriculum Vitae</h2>
+      <div class="w-12 h-1 bg-gold rounded mb-10"></div>
+
+      <div class="bg-white/5 border border-gold/20 rounded-xl p-6 md:p-10 shadow-xl">
+        <div class="border-b-2 border-gold pb-5 mb-6">
+          <div class="font-display text-2xl md:text-3xl font-black text-white tracking-wide">EVEREST IFEANYI EZE</div>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-300 mt-3">
+            <span class="flex items-center gap-2"><i class="fas fa-envelope text-gold text-xs"></i> ifyeverest12@gmail.com</span>
+            <span class="flex items-center gap-2"><i class="fas fa-phone text-gold text-xs"></i> +234 706 227 8167</span>
+            <span class="flex items-center gap-2"><i class="fab fa-linkedin text-gold text-xs"></i> linkedin.com/in/everesteze7</span>
+            <span class="flex items-center gap-2"><i class="fab fa-github text-gold text-xs"></i> github.com/everesteze</span>
+            <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-gold text-xs"></i> Enugu, Nigeria</span>
+          </div>
+        </div>
+
+        <div class="text-xs uppercase tracking-widest text-gold border-b border-gold/20 pb-2 mb-3">Professional Summary</div>
+        <p class="text-sm text-slate-200 leading-relaxed">Motivated Full-Stack Developer and UI/UX Designer in training, currently building skills in web and mobile application development.</p>
+
+        <div class="text-xs uppercase tracking-widest text-gold border-b border-gold/20 pb-2 mb-3 mt-8">Core Competencies</div>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs px-3 py-1 border border-gold/30 rounded text-gold bg-gold/5">JavaScript / TypeScript</span>
+          <span class="text-xs px-3 py-1 border border-gold/30 rounded text-gold bg-gold/5">React.js / Next.js</span>
+          <span class="text-xs px-3 py-1 border border-gold/30 rounded text-gold bg-gold/5">Node.js / Express</span>
+          <span class="text-xs px-3 py-1 border border-gold/30 rounded text-gold bg-gold/5">Python / Django</span>
+          <span class="text-xs px-3 py-1 border border-gold/30 rounded text-gold bg-gold/5">PostgreSQL / MongoDB</span>
+          <span class="text-xs px-3 py-1 border border-gold/30 rounded text-gold bg-gold/5">HTML / Tailwind CSS</span>
+          <span class="text-xs px-3 py-1 border border-gold/30 rounded text-gold bg-gold/5">Git / GitHub</span>
+          <span class="text-xs px-3 py-1 border border-gold/30 rounded text-gold bg-gold/5">Agile / Scrum</span>
+        </div>
+
+        <div class="text-xs uppercase tracking-widest text-gold border-b border-gold/20 pb-2 mb-3 mt-8">Learning &amp; Training</div>
+        <div class="mb-5">
+          <div class="flex flex-wrap justify-between gap-1 mb-1">
+            <div>
+              <div class="font-semibold text-white text-sm">Full-Stack Web Development &amp; AI Training</div>
+              <div class="text-sm text-gold mt-0.5">Turing Tech Academy</div>
+            </div>
+            <div class="text-xs text-slate-400 whitespace-nowrap">2026 – Present</div>
+          </div>
+          <ul class="list-disc pl-5 space-y-1">
+            <li class="text-sm text-slate-200 leading-relaxed">Building real-world projects including a food delivery site, travel agency site, and personal portfolio using HTML, Tailwind CSS, and JavaScript.</li>
+            <li class="text-sm text-slate-200 leading-relaxed">Practicing responsive, accessible, CSS-only interaction patterns (e.g. checkbox-based navigation menus).</li>
+          </ul>
+        </div>
+
+        <div class="text-xs uppercase tracking-widest text-gold border-b border-gold/20 pb-2 mb-3 mt-8">Education</div>
+        <div class="mb-2">
+          <div class="flex flex-wrap justify-between gap-1 mb-1">
+            <div>
+              <div class="font-semibold text-white text-sm">B.Sc. Business Administration</div>
+              <div class="text-sm text-gold mt-0.5">Enugu State University of Science and Technology</div>
+            </div>
+            <div class="text-xs text-slate-400 whitespace-nowrap">2012 – 2016</div>
+          </div>
+          <ul class="list-disc pl-5 space-y-1">
+            <li class="text-sm text-slate-200 leading-relaxed">Graduated with Second Class Honours.</li>
+          </ul>
+        </div>
+
+        <div class="mt-8">
+          <a href="#home" class="inline-block px-6 py-2.5 border-2 border-gold text-gold font-semibold text-sm rounded-md hover:bg-gold hover:text-indigo-950 transition">← Back to Top</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="sticky bottom-0 z-40 bg-indigo-950/98 backdrop-blur-md border-t border-gold/20 flex flex-wrap items-center justify-between gap-3 px-5 py-3">
+    <p class="text-sm text-slate-400">&copy; 2026 <strong class="text-gold">Everest Ifeanyi Eze</strong>. All rights reserved.</p>
+    <div class="flex gap-3 flex-wrap">
+      <a href="#" class="w-9 h-9 rounded-full border border-gold/25 flex items-center justify-center text-slate-400 hover:bg-gold hover:text-indigo-950 hover:border-gold transition"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="w-9 h-9 rounded-full border border-gold/25 flex items-center justify-center text-slate-400 hover:bg-gold hover:text-indigo-950 hover:border-gold transition"><i class="fab fa-github"></i></a>
+      <a href="#" class="w-9 h-9 rounded-full border border-gold/25 flex items-center justify-center text-slate-400 hover:bg-gold hover:text-indigo-950 hover:border-gold transition"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" class="w-9 h-9 rounded-full border border-gold/25 flex items-center justify-center text-slate-400 hover:bg-gold hover:text-indigo-950 hover:border-gold transition"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="w-9 h-9 rounded-full border border-gold/25 flex items-center justify-center text-slate-400 hover:bg-gold hover:text-indigo-950 hover:border-gold transition"><i class="fab fa-youtube"></i></a>
+      <a href="#" class="w-9 h-9 rounded-full border border-gold/25 flex items-center justify-center text-slate-400 hover:bg-gold hover:text-indigo-950 hover:border-gold transition"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" class="w-9 h-9 rounded-full border border-gold/25 flex items-center justify-center text-slate-400 hover:bg-gold hover:text-indigo-950 hover:border-gold transition"><i class="fab fa-behance"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>
